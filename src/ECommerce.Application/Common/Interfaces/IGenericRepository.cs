@@ -1,4 +1,5 @@
-﻿using ECommerce.Domain.Shared.Pagination;
+﻿using ECommerce.Application.Common.Pagination;
+using ECommerce.Domain.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,14 +7,14 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce.Domain.Interfaces.Repositories;
+namespace ECommerce.Application.Common.Interfaces;
 
 public interface IGenericRepository<T> where T : class
 {
     Task<T?> GetByIdAsync(Guid id);
     Task<PaginationResult<T>> GetAllAsync(
         PagingParams pagingParams,
-        Expression<Func<T,bool>>? filter = null,
+        Expression<Func<T, bool>>? filter = null,
         Expression<Func<T, object>>? orderBy = null,
         bool descending = false
         );

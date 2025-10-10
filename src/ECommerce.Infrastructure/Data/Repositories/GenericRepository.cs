@@ -1,15 +1,9 @@
-﻿using ECommerce.Domain.Interfaces.Repositories;
-using ECommerce.Domain.Shared.Pagination;
+﻿using ECommerce.Application.Common.Interfaces;
+using ECommerce.Application.Common.Pagination;
 using ECommerce.Infrastructure.Data.Context;
 using ECommerce.Infrastructure.Data.Helpers;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ECommerce.Infrastructure.Data.Repositories;
 

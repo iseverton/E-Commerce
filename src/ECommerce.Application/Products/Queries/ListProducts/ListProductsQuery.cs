@@ -1,8 +1,9 @@
-﻿using ECommerce.Domain.Entities;
-using ECommerce.Domain.Shared.Pagination;
+﻿
+using ECommerce.Application.Common.Pagination;
+using ECommerce.Domain.Products;
 using MediatR;
 
-namespace ECommerce.Application.Queries.Products;
+namespace ECommerce.Application.Products.Queries.ListProducts;
 
 public class ListProductsQuery : PagingParams,IRequest<PaginationResult<Product>>
 {

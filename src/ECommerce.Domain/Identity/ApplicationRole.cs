@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce.Domain.Entities;
+namespace ECommerce.Domain.Identity;
 
 public class ApplicationRole : IdentityRole<Guid>
 {
@@ -22,4 +22,6 @@ public class ApplicationRole : IdentityRole<Guid>
         CreatedAt = DateTime.UtcNow;
         IsActive = true;
     }
+
+    public ApplicationRole() { }
 }

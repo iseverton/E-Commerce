@@ -1,6 +1,6 @@
-﻿using ECommerce.Application.Queries.Products;
-using ECommerce.Domain.Entities;
-using ECommerce.Domain.Interfaces.Repositories;
+﻿using ECommerce.Application.Common.Interfaces;
+using ECommerce.Application.Products.Queries.ListProducts;
+using ECommerce.Domain.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,17 +19,17 @@ public class ProductController : ControllerBase
         _productRepository = productRepository;
     }
 
-    //[HttpPost]
-    //public async Task<IActionResult> Create(Product product)
-    //{
-    //    _productRepository.AddAsync(product);
-    //    if(!await _productRepository.SaveChangesAsync())
-    //    {
-    //        BadRequest("Error ao salvar no banco");
-    //    }
-    //    return Ok("Criado com sucesso");
+    [HttpPost]
+    public async Task<IActionResult> Create(Product product)
+    {
+        _productRepository.Add(product);
+        if (!await _productRepository.SaveChangesAsync())
+        {
+            BadRequest("Error ao salvar no banco");
+        }
+        return Ok("Criado com sucesso");
 
-    //}
+    }
 
     [HttpGet()]
     public async Task<IActionResult> GetAll( [FromQuery] ListProductsQuery query, 
@@ -38,4 +38,6 @@ public class ProductController : ControllerBase
         var result = await _mediator.Send(query,cancellationToken);
         return Ok(result);
     }
+
+
 }

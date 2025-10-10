@@ -1,4 +1,4 @@
-﻿using ECommerce.Domain.Shared.Pagination;
+﻿using ECommerce.Application.Common.Pagination;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Infrastructure.Data.Helpers;

@@ -1,4 +1,6 @@
-﻿using ECommerce.Domain.Entities;
+﻿using ECommerce.Domain.Identity;
+using ECommerce.Domain.Products;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Infrastructure.Data.Context;
 
-public class ECommerceDbContext : DbContext
+public class ECommerceDbContext : IdentityDbContext<ApplicationUser,ApplicationRole,Guid>
 {
     public ECommerceDbContext(DbContextOptions<ECommerceDbContext> options) : base(options)
     {

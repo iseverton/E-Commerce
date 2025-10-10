@@ -1,4 +1,4 @@
-﻿namespace ECommerce.Domain.Shared.Pagination;
+﻿namespace ECommerce.Application.Common.Pagination;
 
 public class PaginationResult<T>
 {

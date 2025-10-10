@@ -1,11 +1,10 @@
-﻿using ECommerce.Application.Queries.Products;
-using ECommerce.Domain.Entities;
-using ECommerce.Domain.Interfaces.Repositories;
-using ECommerce.Domain.Shared.Pagination;
+﻿using ECommerce.Application.Common.Interfaces;
+using ECommerce.Application.Common.Pagination;
+using ECommerce.Domain.Products;
 using MediatR;
 using System.Linq.Expressions;
 
-namespace ECommerce.Application.Handlers.Products;
+namespace ECommerce.Application.Products.Queries.ListProducts;
 
 public class ListProductsQueryHandler : IRequestHandler<ListProductsQuery, PaginationResult<Product>>
 {
